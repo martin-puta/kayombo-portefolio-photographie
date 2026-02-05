@@ -1,49 +1,42 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function MainNavigation() {
   return (
-    <>
-      <section className='top-txt'>
-         <div className="head container">
-           <div className="head-txt">
-            <p>livraison rapide avec possibilte de retour en 3 jours </p>
-           </div>
-           <div className="sing_in_up">
-            <a href=""> Me CONNECTER</a>
-            <a href="">M'inscrire</a>
-         </div>
-         </div>
-         <div className="navbar">
-            <div className="navbar-container">
-                <input type="checkbox" />
-                <div className="hamburger-lines">
-                    <span className="line line1"></span>
-                    <span className="line line2"></span>
-                    <span className="line line3"></span>
-                </div>
-                <ul className='menu-items'>
-                    <li>
-                        <a href="/">Accuil</a>
-                    </li>
-                    <li>
-                        <a href="/">Nos produits</a>
-                    </li>
-                    <li>
-                        <a href="/">Me deconnecter</a>
-                    </li>
-                </ul>
-                <div className="logo">
-                    <div className="flex item-center gap-1">
-                      <input type="text" placeholder='Rechercher' className='search-topbar-input' />
-                      <button className="btn-search">Rechercher</button>
-                    </div>
-                </div>
+    <section className='top-txt'>
+      <div className="head container">
+        <div className="head-txt">
+          <p>Livraison rapide avec possibilité de retour en 3 jours</p>
+        </div>
+        <div className="sing_in_up">
+          <Link to="/login">Me CONNECTER</Link>
+          <Link to="/register">M'inscrire</Link>
+        </div>
+      </div>
+
+      <nav className="navbar">
+        <div className="navbar-container">
+          <input type="checkbox" id="menu-toggle" />
+          <div className="hamburger-lines">
+            <span className="line line1"></span>
+            <span className="line line2"></span>
+            <span className="line line3"></span>
+          </div>
+          <ul className='menu-items'>
+            <li><Link to="/">Accueil</Link></li>
+            <li><Link to="/product">Nos produits</Link></li>
+            <li><Link to="/logout">Me déconnecter</Link></li>
+          </ul>
+          <div className="logo">
+            <div className="flex item-center gap-1">
+              <input type="text" placeholder='Rechercher...' className='search-topbar-input' />
+              <button className="btn-search">Rechercher</button>
             </div>
-         </div>
-         
-      </section>
-    </>
-  )
+          </div>
+        </div>
+      </nav>
+    </section>
+  );
 }
 
-export default MainNavigation
+export default MainNavigation;
