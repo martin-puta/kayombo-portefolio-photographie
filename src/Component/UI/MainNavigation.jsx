@@ -1,41 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// Remplace le chemin ci-dessous par le vrai chemin de ton logo
+import logoImg from '../../assets/photos/Logo-kayombo.jpg'; 
+
 
 function MainNavigation() {
   return (
-    <section className='top-txt'>
-      <div className="head container">
-        <div className="head-txt">
-          <p>Livraison rapide avec possibilité de retour en 3 jours</p>
+    <header className="nav-wrapper">
+      <nav className="pill-navbar container">
+        {/* Logo / Nom */}
+        <div className="nav-logo">
+          <div className="logo-circle">
+            {/* On remplace KB par la balise img */}
+            <img src={logoImg} alt="KAYOMBO STUDIO Logo" className="nav-logo-img" />
+          </div>
+          <span className="logo-text">KAYOMBO STUDIO</span>
         </div>
-        <div className="sing_in_up">
-          <Link to="/login">Me CONNECTER</Link>
-          <Link to="/register">M'inscrire</Link>
-        </div>
-      </div>
 
-      <nav className="navbar">
-        <div className="navbar-container">
-          <input type="checkbox" id="menu-toggle" />
-          <div className="hamburger-lines">
-            <span className="line line1"></span>
-            <span className="line line2"></span>
-            <span className="line line3"></span>
-          </div>
-          <ul className='menu-items'>
-            <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/product">Nos produits</Link></li>
-            <li><Link to="/logout">Me déconnecter</Link></li>
-          </ul>
-          <div className="logo">
-            <div className="flex item-center gap-1">
-              <input type="text" placeholder='Rechercher...' className='search-topbar-input' />
-              <button className="btn-search">Rechercher</button>
-            </div>
-          </div>
+        {/* Liens de navigation */}
+        <ul className="nav-links">
+          <li><Link to="/">home</Link></li>
+          <li><Link to="/service">services</Link></li>
+          <li><Link to="/portefolio">portfolio</Link></li>
+          <li><Link to="/about">about</Link></li>
+          <li><Link to="/contact">contact</Link></li>
+        </ul>
+
+        {/* Bouton d'action */}
+        <div className="nav-action">
+          <Link to="/contact" className="btn-talk">let's talk</Link>
         </div>
       </nav>
-    </section>
+    </header>
   );
 }
 

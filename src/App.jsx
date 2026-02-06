@@ -2,10 +2,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import RootLayout from './Component/Layout/RoutLayout';
 import Home from './pages/Home';
-import Product from './pages/Product';
 import Login from './pages/auth/Login';
-import Register from './pages/auth/Resgister';
-import Deconnect from './pages/Deconnect';
+import Service from './pages/Service';
+import Portefolio from './pages/Portefolio';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 // On définit le router à l'extérieur pour éviter de le recréer à chaque rendu
 const router = createBrowserRouter([
@@ -14,10 +15,10 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <Home /> }, // "index: true" est plus propre pour la racine
-      { path: "product", element: <Product /> },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
-      // { path : "deconnect", element : <Deconnect/>}
+      { path: "service", element: <Service /> },
+      { path: "portefolio", element: <Portefolio /> },
+      { path: "About", element: <About /> },
+      { path: "contact", element: <Contact/> },
     ],
   },
 ]);
