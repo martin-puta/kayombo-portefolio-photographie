@@ -1,17 +1,17 @@
-/* Container principal - Fond sombre du site */
+
 .nav-wrapper {
-  background-color: #050a18; /* Bleu nuit profond */
+  background-color: #050a18; 
   padding: 20px 0;
   width: 100%;
 }
 
-/* La barre blanche en forme de pilule (Style Image) */
+
 .pill-navbar {
   background-color: #f2f2f2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 10px 8px 25px; /* Padding réduit à droite pour le bouton */
+  padding: 8px 10px 8px 25px; 
   border-radius: 60px;
   max-width: 1100px;
   margin: 0 auto;
@@ -26,7 +26,7 @@
 }
 
 .logo-circle {
-  background-color: #f05a22; /* Orange vibrant */
+  background-color: #f05a22; 
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -129,4 +129,90 @@
   .pill-navbar {
     margin: 0 15px; /* Ajoute un peu de marge sur les côtés */
   }
+}
+
+/* --- HAMBURGER STYLE --- */
+.hamburger {
+  display: none; /* Caché sur desktop */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #050a18;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Animation du bouton hamburger en "X" quand il est actif */
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Le menu qui sort de la gauche */
+  .nav-links {
+    position: fixed;
+    left: -100%; /* Caché à gauche */
+    top: 0;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    width: 280px;
+    height: 100vh;
+    padding: 80px 40px;
+    gap: 30px;
+    transition: 0.4s ease-in-out;
+    box-shadow: 10px 0 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex; /* On force le display flex ici */
+  }
+
+  .nav-links.open {
+    left: 0; /* Sortie vers la droite */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    color: #050a18;
+  }
+
+  .logo-text {
+    display: none; /* Gain de place */
+  }
+
+  .pill-navbar {
+    padding: 8px 10px 8px 15px;
+    margin: 0 10px;
+  }
+
+  /* Overlay sombre quand le menu est ouvert */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+/* Tablette intermédiaire */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .logo-text {
+        font-size: 0.9rem;
+    }
+    .nav-links {
+        gap: 15px;
+    }
 }
