@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// On remplace Link par NavLink
+import { NavLink, Link } from 'react-router-dom'; 
 import logoImg from '../../assets/photos/Logo-kayombo.jpg'; 
 
 function MainNavigation() {
@@ -12,7 +13,6 @@ function MainNavigation() {
   return (
     <header className="nav-wrapper">
       <nav className="pill-navbar container">
-        
         
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span className="bar"></span>
@@ -27,12 +27,13 @@ function MainNavigation() {
           <span className="logo-text">KAYOMBO STUDIO</span>
         </div>
 
+        {/* Utilisation de NavLink ici */}
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <li><Link to="/" onClick={toggleMenu}>home</Link></li>
-          <li><Link to="/service" onClick={toggleMenu}>services</Link></li>
-          <li><Link to="/portefolio" onClick={toggleMenu}>portfolio</Link></li>
-          <li><Link to="/about" onClick={toggleMenu}>about</Link></li>
-          <li><Link to="/contact" onClick={toggleMenu}>contact</Link></li>
+          <li><NavLink to="/" onClick={toggleMenu}>home</NavLink></li>
+          <li><NavLink to="/service" onClick={toggleMenu}>services</NavLink></li>
+          <li><NavLink to="/portefolio" onClick={toggleMenu}>portfolio</NavLink></li>
+          <li><NavLink to="/about" onClick={toggleMenu}>about</NavLink></li>
+          <li><NavLink to="/contact" onClick={toggleMenu}>contact</NavLink></li>
         </ul>
 
         <div className="nav-action">
@@ -40,7 +41,6 @@ function MainNavigation() {
         </div>
       </nav>
 
-      
       {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
     </header>
   );
