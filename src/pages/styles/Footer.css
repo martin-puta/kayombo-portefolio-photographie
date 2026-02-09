@@ -1,0 +1,239 @@
+.footer-tech {
+  background-color: #0b111a; /* Bleu très foncé presque noir */
+  color: #e2e8f0;
+  padding: 60px 20px 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-tech-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-tech-main {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Branding & Logo */
+.tech-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #3b82f6, #2dd4bf);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+.tech-logo h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.tech-logo span {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.tech-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+/* Newsletter Section */
+.tech-newsletter h4 {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.newsletter-input-group input {
+  background: #1e293b;
+  border: 1px solid #334155;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: white;
+  flex: 1;
+}
+
+.newsletter-input-group button {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.input-hint {
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+/* Socials */
+.tech-socials {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tech-socials span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  color: #94a3b8;
+  transition: all 0.3s;
+}
+
+.icon:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Link Columns */
+.footer-tech-links h4 {
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.footer-tech-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-tech-links li {
+  margin-bottom: 12px;
+}
+
+.footer-tech-links a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-tech-links a:hover {
+  color: #3b82f6;
+}
+
+/* Contact Box */
+.footer-tech-contact {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-box {
+  text-align: right;
+}
+
+.email-link {
+  color: #2dd4bf;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.response-time {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 5px;
+}
+
+/* Bottom Bar */
+.footer-tech-bottom {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.legal-links {
+  display: flex;
+  gap: 20px;
+}
+
+.legal-links a {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsivité */
+@media (max-width: 968px) {
+  .footer-tech-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-tech-main {
+    grid-template-columns: 1fr;
+  }
+  .contact-box {
+    text-align: left;
+  }
+  .footer-tech-contact {
+    justify-content: flex-start;
+  }
+  .footer-tech-bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
