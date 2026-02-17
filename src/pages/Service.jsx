@@ -63,7 +63,7 @@ const Service = () => {
         </div>
       </section>
 
-      {/* Section Processus */}
+     
       <section className="process-section">
         <div className="process-container">
           <div className="process-col">

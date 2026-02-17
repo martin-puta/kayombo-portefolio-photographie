@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #0b0e18;
+  --card-bg: #151a2d;
+  --accent-blue: #00d2ff;
+  --accent-purple: #9d50bb;
+  --text-main: #ffffff;
+  --text-dim: #a0a0a0;
+}
+
+.portfolio-container {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding: 50px 10%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header & Nav */
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.portfolio-header h2 {
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.portfolio-nav span {
+  margin: 0 15px;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: 0.3s;
+}
+
+.portfolio-nav span.active, .portfolio-nav span:hover {
+  color: var(--accent-blue);
+  border-bottom: 2px solid var(--accent-blue);
+}
+
+/* Projets */
+.project-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+  gap: 50px;
+}
+
+.project-card.left {
+  flex-direction: row-reverse;
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-info h3 {
+  color: var(--accent-blue);
+  font-size: 0.9rem;
+}
+
+.project-info h4 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+}
+
+.project-info p {
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.read-more {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* Effet Image avec lueur */
+.project-image-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.image-border-glow {
+  position: relative;
+  padding: 10px;
+  border: 2px solid var(--accent-blue);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+.image-border-glow img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Bouton Voir Tout */
+.view-all-btn {
+  display: block;
+  margin: 0 auto 80px;
+  padding: 12px 40px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Services */
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
