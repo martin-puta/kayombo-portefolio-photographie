@@ -24,7 +24,7 @@
 }
 
 .logo-circle {
-  background-color: #f05a22; 
+  background-color: #4a89ff; 
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -101,7 +101,7 @@
 }
 
 .btn-talk:hover {
-  background-color: #d4491a;
+  background-color: #4a89ff;
   transform: translateY(-1px);
 }
 
