@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faFacebookF, 
@@ -9,6 +10,31 @@ import {
 import '../pages/styles/Contact.css';
 
 function Contact() {
+  const form = useRef();
+
+ const sendEmail = (e) => {
+    e.preventDefault();
+
+    // Il est préférable d'utiliser emailjs.init(PUBLIC_KEY) une seule fois au début
+    // Mais voici la méthode sendForm corrigée :
+    
+    emailjs.sendForm(
+      "service_nsrtj5m", 
+      "template_mbr7yer", 
+      form.current, 
+      "HJE6X79FAqnFkzN9t"
+    )
+    .then((result) => {
+        console.log("SUCCÈS!", result.status, result.text);
+        alert("Merci ! Votre message a été envoyé avec succès.");
+        form.current.reset();
+    })
+    .catch((error) => {
+        // On affiche l'erreur complète dans la console pour débugger
+        console.error("ÉCHEC...", error);
+        alert("Oups ! Erreur : " + JSON.stringify(error));
+    });
+  };
   return (
     <div className="ks-contact-page">
       <header className="ks-contact-header">
@@ -50,7 +76,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* SOCIAL MEDIA ICONS SECTION */}
           <div className="ks-social-wrapper">
             <p className="ks-social-text">Follow the Journey</p>
             <div className="ks-social-icons-list">
@@ -72,25 +97,26 @@ function Contact() {
 
         <div className="ks-contact-form-panel">
           <h2 className="ks-section-title">Enquire Now</h2>
-          <form className="ks-form-element">
+          {/* Ajout du ref et du onSubmit */}
+          <form ref={form} onSubmit={sendEmail} className="ks-form-element">
             <div className="ks-form-group-row">
-              <input type="text" className="ks-form-input" placeholder="Full Name" required />
-              <input type="email" className="ks-form-input" placeholder="Email Address" required />
+              <input type="text" name="user_name" className="ks-form-input" placeholder="Full Name" required />
+              <input type="email" name="user_email" className="ks-form-input" placeholder="Email Address" required />
             </div>
             
             <div className="ks-form-group-row">
-              <input type="text" className="ks-form-input" placeholder="Event Type" />
-              <input type="date" className="ks-form-input" />
+              <input type="text" name="event_type" className="ks-form-input" placeholder="Event Type" />
+              <input type="date" name="event_date" className="ks-form-input" />
             </div>
 
-            <select className="ks-form-input ks-form-select" required>
+            <select name="service_type" className="ks-form-input ks-form-select" required>
               <option value="">Interested in...</option>
               <option value="photography">Photography Only</option>
               <option value="videography">Videography Only</option>
               <option value="both">Photo & Video Pack</option>
             </select>
 
-            <textarea className="ks-form-textarea" placeholder="Tell me more about your event..." rows="5"></textarea>
+            <textarea name="message" className="ks-form-textarea" placeholder="Tell me more about your event..." rows="5"></textarea>
             
             <button type="submit" className="ks-submit-btn">Check Availability</button>
           </form>
