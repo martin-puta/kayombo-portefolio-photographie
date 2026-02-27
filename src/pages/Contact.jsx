@@ -12,11 +12,8 @@ import '../pages/styles/Contact.css';
 function Contact() {
   const form = useRef();
 
- const sendEmail = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-
-    // Il est préférable d'utiliser emailjs.init(PUBLIC_KEY) une seule fois au début
-    // Mais voici la méthode sendForm corrigée :
     
     emailjs.sendForm(
       "service_nsrtj5m", 
@@ -30,11 +27,11 @@ function Contact() {
         form.current.reset();
     })
     .catch((error) => {
-        // On affiche l'erreur complète dans la console pour débugger
         console.error("ÉCHEC...", error);
         alert("Oups ! Erreur : " + JSON.stringify(error));
     });
   };
+
   return (
     <div className="ks-contact-page">
       <header className="ks-contact-header">
@@ -97,16 +94,30 @@ function Contact() {
 
         <div className="ks-contact-form-panel">
           <h2 className="ks-section-title">Enquire Now</h2>
-          {/* Ajout du ref et du onSubmit */}
           <form ref={form} onSubmit={sendEmail} className="ks-form-element">
+            
+            {/* Ligne 1 : Nom et Email */}
             <div className="ks-form-group-row">
               <input type="text" name="user_name" className="ks-form-input" placeholder="Full Name" required />
               <input type="email" name="user_email" className="ks-form-input" placeholder="Email Address" required />
             </div>
             
+            {/* Ligne 2 : Type d'événement et WhatsApp */}
             <div className="ks-form-group-row">
               <input type="text" name="event_type" className="ks-form-input" placeholder="Event Type" />
-              <input type="date" name="event_date" className="ks-form-input" />
+              <input type="tel" name="user_whatsapp" className="ks-form-input" placeholder="WhatsApp Number (eg. +61...)" />
+            </div>
+
+            {/* Ligne 3 : Date et Heure de l'événement */}
+            <div className="ks-form-group-row">
+              <div className="ks-input-combined">
+                <label className="ks-mini-label">Event Date</label>
+                <input type="date" name="event_date" className="ks-form-input" />
+              </div>
+              <div className="ks-input-combined">
+                <label className="ks-mini-label">Start Time</label>
+                <input type="time" name="event_time" className="ks-form-input" />
+              </div>
             </div>
 
             <select name="service_type" className="ks-form-input ks-form-select" required>
@@ -116,7 +127,7 @@ function Contact() {
               <option value="both">Photo & Video Pack</option>
             </select>
 
-            <textarea name="message" className="ks-form-textarea" placeholder="Tell me more about your event..." rows="5"></textarea>
+            <textarea name="message" className="ks-form-textarea" placeholder="Tell me more about your event (Location, duration, etc.)..." rows="5"></textarea>
             
             <button type="submit" className="ks-submit-btn">Check Availability</button>
           </form>
@@ -126,7 +137,7 @@ function Contact() {
       <div className="ks-map-wrapper">
         <iframe 
           title="ks-location-map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8465545815774!2d151.2092955!3d-33.8688197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e879f37%3A0x6981f48623b2b52e!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2sfr!4v1700000000000" 
+          src="about:blank" 
           width="100%" 
           height="450" 
           style={{ border: 0, filter: 'grayscale(100%) brightness(0.9)' }} 
