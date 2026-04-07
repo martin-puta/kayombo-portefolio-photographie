@@ -13,107 +13,107 @@ import reportWedding from '../assets/photos/wedding2.jpg'
 import imgKayombo from '../assets/photos/img-kayombo.jpg'
 
 const Portefolio = () => {
-  const [activeFilter, setActiveFilter] = useState('Tout');
+  const [activeFilter, setActiveFilter] = useState('All');
 
- const projects = [
+  const projects = [
     { 
       id: 1, 
-      title: "Esthétique 80s", 
+      title: "80s Aesthetic", 
       category: "Photo", 
-      description: "Série vintage capturant l'insouciance des étés rétro.", 
+      description: "Vintage series capturing the carefree spirit of retro summers.", 
       image: img9 
     },
     { 
       id: 2, 
-      title: "Inspiration Créative", 
+      title: "Creative Inspiration", 
       category: "Photo", 
-      description: "Exploration visuelle et recherche de concepts artistiques.", 
+      description: "Visual exploration and research of artistic concepts.", 
       image: img8 
     },
     { 
       id: 3, 
-      title: "Liberté Lacustre", 
+      title: "Lakeside Freedom", 
       category: "Photo", 
-      description: "Capture dynamique d'un saut de l'ange en plein air.", 
+      description: "Dynamic capture of an outdoor swan dive.", 
       image: imgJumping 
     },
     { 
       id: 4, 
-      title: "Portraits Urbains", 
+      title: "Urban Portraits", 
       category: "Photo", 
-      description: "Complicité et sourires capturés dans un cadre citadin.", 
+      description: "Shared moments and smiles captured in a city setting.", 
       image: img16 
     },
     { 
       id: 5, 
-      title: "Union Sacrée", 
+      title: "Sacred Union", 
       category: "Photo", 
-      description: "Reportage intimiste des moments forts d'une cérémonie.", 
+      description: "Intimate coverage of the highlights of a ceremony.", 
       image: reportWedding 
     },
     { 
       id: 6, 
-      title: "Production Kayombo", 
-      category: "Vidéo", 
-      description: "Réalisation d'un clip musical aux visuels percutants.", 
+      title: "Kayombo Production", 
+      category: "Video", 
+      description: "Creation of a music video with striking visuals.", 
       image: imgKayombo 
     },
     { 
       id: 7, 
-      title: "Portrait de Jeunesse", 
-      category: "Vidéo", 
-      description: "Storytelling vidéo axé sur l'émotion et le regard.", 
+      title: "Youth Portrait", 
+      category: "Video", 
+      description: "Video storytelling focused on emotion and expression.", 
       image: img17 
     },
     { 
       id: 8, 
-      title: "Session Studio", 
-      category: "Vidéo", 
-      description: "Coulisses d'une séance vidéo professionnelle sous les projecteurs.", 
+      title: "Studio Session", 
+      category: "Video", 
+      description: "Behind the scenes of a professional video shoot under the spotlights.", 
       image: imgSeance 
     },
     { 
       id: 9, 
-      title: "Perspectives Aériennes", 
+      title: "Aerial Perspectives", 
       category: "Drone", 
-      description: "Exploration des paysages vue du ciel en haute résolution.", 
+      description: "Exploration of landscapes from the sky in high resolution.", 
       image: img9 
     },
     { 
       id: 10, 
-      title: "Suivi de Chantier", 
+      title: "Construction Monitoring", 
       category: "Drone", 
-      description: "Documentation technique de l'évolution d'une structure béton.", 
+      description: "Technical documentation of the progress of a concrete structure.", 
       image: imgChantier 
     },
     { 
       id: 11, 
-      title: "Force & Intensité", 
+      title: "Strength & Intensity", 
       category: "Photo", 
-      description: "Série athlétique sur la concentration d'une boxeuse en entraînement.", 
+      description: "Athletic series on the focus of a female boxer in training.", 
       image: img15 
     },
     { 
       id: 12, 
-      title: "Événementiel Dynamique", 
-      category: "Vidéo", 
-      description: "Couverture immersive de moments d'action et de sport.", 
+      title: "Dynamic Events", 
+      category: "Video", 
+      description: "Immersive coverage of action and sports moments.", 
       image: img15 
     },
   ];
 
   const services = [
-    { title: "MONTAGE VIDÉO", icon: "🎬", desc: "Édition professionnelle et étalonnage." },
-    { title: "SHOOTING PHOTO", icon: "📷", desc: "Séances en extérieur ou studio." },
-    { title: "PRISE DE VUE DRONE", icon: "🚁", desc: "Captations aériennes en 4K." },
-    { title: "DIRECTION ARTISTIQUE", icon: "🎨", desc: "Création d'univers visuels." }
+    { title: "VIDEO EDITING", icon: "🎬", desc: "Professional editing and color grading." },
+    { title: "PHOTO SHOOT", icon: "📷", desc: "Outdoor or studio sessions." },
+    { title: "DRONE FILMING", icon: "🚁", desc: "4K aerial captures." },
+    { title: "ART DIRECTION", icon: "🎨", desc: "Creation of visual universes." }
   ];
 
-  const filteredProjects = activeFilter === 'Tout' 
+  const categories = ['All', 'Video', 'Photo', 'Drone'];
+
+  const filteredProjects = activeFilter === 'All' 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
-
-  const categories = ['Tout', 'Vidéo', 'Photo', 'Drone'];
 
   return (
     <div className="pf-main-wrapper">
@@ -136,10 +136,10 @@ const Portefolio = () => {
         {filteredProjects.map((project, index) => (
           <div key={project.id} className={`pf-project-card ${index % 2 === 0 ? 'pf-row' : 'pf-row-reverse'}`}>
             <div className="pf-project-info">
-              <span className="pf-project-id">PROJET {project.id}</span>
+              <span className="pf-project-id">PROJECT {project.id}</span>
               <h4 className="pf-project-title">{project.title}</h4>
               <p className="pf-project-desc">{project.description}</p>
-              <button className="pf-btn-link">Voir le projet</button>
+              <button className="pf-btn-link">View project</button>
             </div>
             <div className="pf-image-container">
               <div className="pf-image-glow-wrapper">
@@ -151,7 +151,7 @@ const Portefolio = () => {
       </section>
 
       <div className="pf-actions-center">
-        <button className="pf-btn-gradient">Voir tout</button>
+        <button className="pf-btn-gradient">View all</button>
       </div>
 
       <section className="pf-services-section">

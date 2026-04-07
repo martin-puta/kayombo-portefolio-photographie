@@ -7,17 +7,17 @@ const About = () => {
   return (
     <div className="ks-about-wrapper">
       
-      {/* SECTION HERO */}
+      {/* HERO SECTION */}
       <section className="ks-hero-container">
         <div className="ks-hero-main-content">
           <h4 className="ks-hero-subtitle">Toowoomba, QLD</h4>
           <h1 className="ks-hero-heading">KAYOMBO <span className="ks-brand-accent">STUDIOS</span></h1>
           <p className="ks-hero-text">
-            Photographie • Vidéographie • Montage • Design Créatif. 
-            Capturer des moments réels, créer des souvenirs éternels.
+            Photography • Videography • Editing • Creative Design. 
+            Capturing real moments, creating eternal memories.
           </p>
           <button className="ks-contact-trigger">
-            ME CONTACTER
+            CONTACT ME
           </button>
         </div>
         
@@ -26,58 +26,58 @@ const About = () => {
         </div>
       </section>
 
-      {/* SECTION QUI SUIS-JE */}
+      {/* WHO AM I SECTION */}
       <section className="ks-bio-section">
         <div className="ks-bio-layout">
           <div className="ks-bio-description">
-            <h2 className="ks-bio-title">L'Histoire derrière l'objectif</h2>
+            <h2 className="ks-bio-title">The Story Behind the Lens</h2>
             <p className="ks-bio-paragraph">
-              Je m'appelle <strong>Bernard</strong>. Mon voyage créatif a commencé il y a deux ans. 
-              Ce qui n'était qu'une simple curiosité est devenu une passion dévorante pour l'excellence visuelle.
+              My name is <strong>Bernard</strong>. My creative journey began two years ago. 
+              What started as simple curiosity has grown into a consuming passion for visual excellence.
             </p>
             <p className="ks-bio-paragraph">
-              Aujourd'hui, Kayombo Studios est le fruit de cette discipline. Je ne me contente pas de prendre des photos ; 
-              j'aide les gens à se sentir confiants et les entreprises à communiquer avec impact.
+              Today, Kayombo Studios is the result of that discipline. I don’t just take photos; 
+              I help people feel confident and businesses communicate with impact.
             </p>
           </div>
           
           <div className="ks-stats-container">
             <div className="ks-stat-item">
               <span className="ks-stat-value">2+</span>
-              <p className="ks-stat-desc">Années d'expérience</p>
+              <p className="ks-stat-desc">Years of experience</p>
             </div>
             <div className="ks-stat-item">
               <span className="ks-stat-value">100%</span>
-              <p className="ks-stat-desc">Engagement & Intégrité</p>
+              <p className="ks-stat-desc">Commitment & Integrity</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION SERVICES */}
+      {/* SERVICES SECTION */}
       <section className="ks-offerings-section">
-        <h2 className="ks-offerings-main-title">Mes Services</h2>
+        <h2 className="ks-offerings-main-title">My Services</h2>
         <div className="ks-offerings-grid">
           
           <ServiceCard 
             Icon={<CameraIcon />} 
-            title="Photographie" 
-            desc="Portraits, Mariages, Événements et Lifestyle." 
+            title="Photography" 
+            desc="Portraits, Weddings, Events, and Lifestyle." 
           />
           <ServiceCard 
             Icon={<VideoCameraIcon />} 
-            title="Vidéographie" 
-            desc="Publicités, Reels Instagram et Storytelling." 
+            title="Videography" 
+            desc="Commercials, Instagram Reels, and Storytelling." 
           />
           <ServiceCard 
             Icon={<SparklesIcon />} 
-            title="Retouche" 
-            desc="Colorimétrie cinématique et édition avancée." 
+            title="Editing" 
+            desc="Cinematic color grading and advanced editing." 
           />
           <ServiceCard 
             Icon={<PaintBrushIcon />} 
             title="Branding" 
-            desc="Création de logos et identités visuelles." 
+            desc="Logo design and visual identity creation." 
           />
           
         </div>

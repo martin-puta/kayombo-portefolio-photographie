@@ -1,7 +1,6 @@
 import React from 'react';
 import '../pages/styles/Footer.css'
-// Note: Utilise tes propres icônes ou une librairie comme lucide-react / font-awesome
-import { Mail, Instagram, Linkedin, Twitter, Github } from 'lucide-react'; 
+import { Instagram, Linkedin, Twitter, Facebook } from 'lucide-react'; 
 
 function Footer() {
   return (
@@ -9,7 +8,7 @@ function Footer() {
       <div className="footer-tech-container">
         
         <div className="footer-tech-main">
-          {/* Colonne 1: Branding & Newsletter */}
+          {/* Column 1: Branding & Newsletter */}
           <div className="footer-tech-brand">
             <div className="tech-logo">
               <div className="logo-icon">K</div>
@@ -20,76 +19,94 @@ function Footer() {
             </div>
             
             <p className="tech-description">
-              Pionnier dans l'art visuel numérique et la photographie de haute précision. 
-              Rejoignez notre réseau pour suivre l'évolution de nos projets.
+              Pioneer in digital visual art and high-precision photography. 
+              Join our network to follow the evolution of our projects.
             </p>
 
             <div className="tech-newsletter">
-              <h4>Restez informé</h4>
+              <h4>Stay informed</h4>
               <div className="newsletter-input-group">
-                <input type="email" placeholder="Votre email" />
-                <button>S'abonner</button>
+                <input type="email" placeholder="Your email" />
+                <button>Subscribe</button>
               </div>
-              <p className="input-hint">Recevez les dernières mises à jour du studio.</p>
+              <p className="input-hint">Receive the latest updates from the studio.</p>
             </div>
 
             <div className="tech-socials">
-              <span>Suivez-nous :</span>
+              <span>Follow us:</span>
               <div className="social-icons">
-                <a href="#" className="icon twitter"><Twitter size={18} /></a>
-                <a href="#" className="icon linkedin"><Linkedin size={18} /></a>
-                <a href="#" className="icon instagram"><Instagram size={18} /></a>
-                <a href="#" className="icon github"><Github size={18} /></a>
+                {/* Facebook Link */}
+                <a 
+                  href="https://www.facebook.com/share/1CCUP9jqV7/?mibextid=wwXIfr" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="icon facebook"
+                >
+                  <Facebook size={18} />
+                </a>
+
+                {/* Instagram Link */}
+                <a 
+                  href="https://www.instagram.com/kayombo_studios?igsh=YTB2djBvN3V4eGN6" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="icon instagram"
+                >
+                  <Instagram size={18} />
+                </a>
+
+                {/* <a href="#" className="icon twitter"><Twitter size={18} /></a>
+                <a href="#" className="icon linkedin"><Linkedin size={18} /></a> */}
               </div>
             </div>
           </div>
 
-          {/* Colonne 2: Menu Services */}
+          {/* Column 2: Services Menu */}
           <div className="footer-tech-links">
             <h4>Services</h4>
             <ul>
-              <li><a href="#">Photographie</a></li>
-              <li><a href="#">Design Graphique</a></li>
-              <li><a href="#">Cinéma</a></li>
+              <li><a href="#">Photography</a></li>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Cinema</a></li>
               <li><a href="#">Branding</a></li>
-              <li><a href="#">Consultation</a></li>
+              <li><a href="#">Consulting</a></li>
             </ul>
           </div>
 
-          {/* Colonne 3: Menu Ressources */}
+          {/* Column 3: Resources Menu */}
           <div className="footer-tech-links">
-            <h4>Ressources</h4>
+            <h4>Resources</h4>
             <ul>
               <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Études de cas</a></li>
+              <li><a href="#">Case Studies</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Équipement</a></li>
+              <li><a href="#">Equipment</a></li>
               <li><a href="#">FAQ</a></li>
             </ul>
           </div>
 
-          {/* Colonne 4: Support / Contact Rapide */}
+          {/* Column 4: Support / Quick Contact */}
           <div className="footer-tech-contact">
             <div className="contact-box">
-              <h4>Des questions ?</h4>
+              <h4>Questions?</h4>
               <a href="mailto:contact@kayombo.pro" className="email-link">contact@kayombo.pro</a>
-              <p className="response-time">Temps de réponse : &lt; 24 heures</p>
+              <p className="response-time">Response time: &lt; 24 hours</p>
             </div>
           </div>
         </div>
 
-        {/* Barre de Status et Légal */}
+        {/* Status Bar and Legal */}
         <div className="footer-tech-bottom">
           <div className="legal-links">
             <span>© 2026 Kayombo Studio.</span>
-            <a href="#">Confidentialité</a>
-            <a href="#">Conditions</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
             <a href="#">Cookies</a>
           </div>
           <div className="system-status">
             <span className="status-dot"></span>
-            <span>Systèmes opérationnels</span>
-            <span className="last-update">| Mis à jour : il y a 2h</span>
+            <span>Systems operational</span>
+            <span className="last-update">| Updated: 2h ago</span>
           </div>
         </div>
       </div>
